@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Fizzbuzz
 i=1
-for i in {1..100}
+while i in {1..100}
 do
 	if [ $((i % 15)) -eq 0 ]
     	then
