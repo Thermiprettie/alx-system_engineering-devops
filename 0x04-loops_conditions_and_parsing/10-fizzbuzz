@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Fizzbuzz
-
+i=1
 for i in {1..100}
 do
 	if [ $(( i%15 )) -eq 0 ]
@@ -15,4 +15,6 @@ do
     	else
         	echo "$i"
     	fi
+	i=$((i + 1))
 done
+i=$i
