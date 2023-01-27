@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script that display the bash word without
+# using pgrep
+ps -aux | grep "bash"
