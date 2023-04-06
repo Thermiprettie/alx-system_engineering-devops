@@ -18,12 +18,12 @@ frontend http-in
         default_backend servers
 backend servers
         balance roundrobin
-        server 158371-web-01 52.3.251.92:80 check
-        server 158371-web-02 34.204.81.7:80 check
+        server 112880-web-01 52.3.251.92:80 check
+        server 112880-web-02 54.160.69.73:80 check
 EOF
 
 echo "52.3.251.92" > /etc/hostname
-echo "34.204.81.7" >> /etc/hostname
+echo "54.160.69.73" >> /etc/hostname
 
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/haproxy
 
