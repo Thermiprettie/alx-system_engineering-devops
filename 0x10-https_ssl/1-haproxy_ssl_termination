@@ -1,0 +1,20 @@
+global
+        daemon
+        maxconn 256
+defaults
+        mode http
+        timeout connect 5000ms
+        timeout client 50000ms
+        timeout server 50000ms
+frontend http-in
+        bind *:80
+        default_backend servers
+backend servers
+        balance roundrobin
+        server 112880-web-01 52.3.251.92:80 check
+        server 112880-web-02 54.160.69.73:80 check
+frontend https-in
+        bind *:443 ssl crt /etc/haproxy/certs/www.steadtech.tech.pem
+        default_backend servers
+backend letsencrypt-backend
+        server letsencrypt 127.0.0.1:54321
