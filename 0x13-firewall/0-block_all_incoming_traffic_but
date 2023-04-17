@@ -1,0 +1,14 @@
+# install UFW if not installed
+sudo apt install ufw
+# if your server has IPv6 enabled, configure UFW to support it.
+sudo vi /etc/default/ufw
+# set your UFW rules back to the defaults
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+# set  rule for UFW to allow incoming connections from ssh, https ssl, and http
+sudo ufw allow 22
+sudo ufw allow 443
+sudo ufw allow 80
+# Enable UFW
+sudo ufw enable
+
