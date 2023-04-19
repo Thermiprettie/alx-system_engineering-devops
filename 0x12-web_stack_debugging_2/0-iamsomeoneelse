@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-# runs whoami command under user passed as arg1
-su "$1" -s /bin/bash -c 'whoami'
+# runs whoami command under user passed as root
+sudo -u "$1" bash << EOF
+whoami
+EOF
