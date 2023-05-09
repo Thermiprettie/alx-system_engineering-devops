@@ -7,7 +7,15 @@ import requests
 
 
 def count_words(subreddit, word_list, instances={}, after="", count=0):
-    """prints a sorted count of given keywords"""
+    """prints a sorted count of given keywords
+
+    Args:
+        subreddit (str): subreddit to search.
+        word_list (list): words to search.
+        instances (obj): instances of words.
+        after (str): parameter for  next page of the results.
+        count (int): count of returned keywords
+    """
     query_url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     headers = {
         "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
