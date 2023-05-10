@@ -1,5 +1,5 @@
 # Using strace, find out why Apache is returning a 500 error,
-# fix it then automate it using Puppet 
+# fix it and then automate it using Puppet 
 
 exec { 'fix-error':
   command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
